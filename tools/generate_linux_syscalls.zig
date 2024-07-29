@@ -128,111 +128,111 @@ const arch_infos = [_]ArchInfo{
     // Newer architectures (starting with aarch64 c. 2012) now use the same C
     // header file for their syscall numbers. Arch-specific headers are used to
     // define pre-proc. vars that add additional (usually obsolete) syscalls.
-    .{
-        .preprocessedArch = .{
-            .name = "hexagon",
-            .enum_name = "Hexagon",
-            .file_path = "arch/hexagon/include/uapi/asm/unistd.h",
-            .child_options = .{
-                .args = default_args,
-                .target = "hexagon-freestanding-none",
-            },
-            .processFile = &processPreprocessedFile,
-            .header = null,
-            .extra_values = null,
-            .additional_enum = null,
-        },
-    },
-    .{
-        .preprocessedArch = .{
-            .name = "csky",
-            .enum_name = "CSky",
-            .file_path = "arch/csky/include/uapi/asm/unistd.h",
-            .child_options = .{
-                .args = default_args,
-                .target = "csky-freestanding-none",
-            },
-            .processFile = &processPreprocessedFile,
-            .header = null,
-            .extra_values = null,
-            .additional_enum = null,
-        },
-    },
-    .{
-        .preprocessedArch = .{
-            .name = "arc",
-            .enum_name = "Arc",
-            .file_path = "arch/arc/include/uapi/asm/unistd.h",
-            .child_options = .{
-                .args = default_args,
-                .target = "arc-freestanding-none",
-            },
-            .processFile = &processPreprocessedFile,
-            .header = null,
-            .extra_values = null,
-            .additional_enum = null,
-        },
-    },
-    .{
-        .preprocessedArch = .{
-            .name = "loongarch",
-            .enum_name = "LoongArch64",
-            .file_path = "arch/loongarch/include/uapi/asm/unistd.h",
-            .child_options = .{
-                .args = default_args,
-                .target = "loongarch64-freestanding-none",
-            },
-            .processFile = &processPreprocessedFile,
-            .header = null,
-            .extra_values = null,
-            .additional_enum = null,
-        },
-    },
-    .{
-        .preprocessedArch = .{
-            .name = "riscv64",
-            .enum_name = "RiscV64",
-            .file_path = "arch/riscv/include/uapi/asm/unistd.h",
-            .child_options = .{
-                .args = default_args,
-                .target = "riscv64-freestanding-none",
-            },
-            .processFile = &processPreprocessedFile,
-            .header = null,
-            .extra_values = null,
-            .additional_enum = null,
-        },
-    },
-    .{
-        .preprocessedArch = .{
-            .name = "riscv32",
-            .enum_name = "RiscV32",
-            .file_path = "arch/riscv/include/uapi/asm/unistd.h",
-            .child_options = .{
-                .args = default_args,
-                .target = "riscv32-freestanding-none",
-            },
-            .processFile = &processPreprocessedFile,
-            .header = null,
-            .extra_values = null,
-            .additional_enum = null,
-        },
-    },
-    .{
-        .preprocessedArch = .{
-            .name = "arm64",
-            .enum_name = "Arm64",
-            .file_path = "arch/arm64/include/uapi/asm/unistd.h",
-            .child_options = .{
-                .args = default_args,
-                .target = "aarch64-freestanding-none",
-            },
-            .processFile = &processPreprocessedFile,
-            .header = null,
-            .extra_values = null,
-            .additional_enum = null,
-        },
-    },
+    // .{
+    //     .preprocessedArch = .{
+    //         .name = "hexagon",
+    //         .enum_name = "Hexagon",
+    //         .file_path = "arch/hexagon/include/uapi/asm/unistd.h",
+    //         .child_options = .{
+    //             .args = default_args,
+    //             .target = "hexagon-freestanding-none",
+    //         },
+    //         .processFile = &processPreprocessedFile,
+    //         .header = null,
+    //         .extra_values = null,
+    //         .additional_enum = null,
+    //     },
+    // },
+    // .{
+    //     .preprocessedArch = .{
+    //         .name = "csky",
+    //         .enum_name = "CSky",
+    //         .file_path = "arch/csky/include/uapi/asm/unistd.h",
+    //         .child_options = .{
+    //             .args = default_args,
+    //             .target = "csky-freestanding-none",
+    //         },
+    //         .processFile = &processPreprocessedFile,
+    //         .header = null,
+    //         .extra_values = null,
+    //         .additional_enum = null,
+    //     },
+    // },
+    // .{
+    //     .preprocessedArch = .{
+    //         .name = "arc",
+    //         .enum_name = "Arc",
+    //         .file_path = "arch/arc/include/uapi/asm/unistd.h",
+    //         .child_options = .{
+    //             .args = default_args,
+    //             .target = "arc-freestanding-none",
+    //         },
+    //         .processFile = &processPreprocessedFile,
+    //         .header = null,
+    //         .extra_values = null,
+    //         .additional_enum = null,
+    //     },
+    // },
+    // .{
+    //     .preprocessedArch = .{
+    //         .name = "loongarch",
+    //         .enum_name = "LoongArch64",
+    //         .file_path = "arch/loongarch/include/uapi/asm/unistd.h",
+    //         .child_options = .{
+    //             .args = default_args,
+    //             .target = "loongarch64-freestanding-none",
+    //         },
+    //         .processFile = &processPreprocessedFile,
+    //         .header = null,
+    //         .extra_values = null,
+    //         .additional_enum = null,
+    //     },
+    // },
+    // .{
+    //     .preprocessedArch = .{
+    //         .name = "riscv64",
+    //         .enum_name = "RiscV64",
+    //         .file_path = "arch/riscv/include/uapi/asm/unistd.h",
+    //         .child_options = .{
+    //             .args = default_args,
+    //             .target = "riscv64-freestanding-none",
+    //         },
+    //         .processFile = &processPreprocessedFile,
+    //         .header = null,
+    //         .extra_values = null,
+    //         .additional_enum = null,
+    //     },
+    // },
+    // .{
+    //     .preprocessedArch = .{
+    //         .name = "riscv32",
+    //         .enum_name = "RiscV32",
+    //         .file_path = "arch/riscv/include/uapi/asm/unistd.h",
+    //         .child_options = .{
+    //             .args = default_args,
+    //             .target = "riscv32-freestanding-none",
+    //         },
+    //         .processFile = &processPreprocessedFile,
+    //         .header = null,
+    //         .extra_values = null,
+    //         .additional_enum = null,
+    //     },
+    // },
+    // .{
+    //     .preprocessedArch = .{
+    //         .name = "arm64",
+    //         .enum_name = "Arm64",
+    //         .file_path = "arch/arm64/include/uapi/asm/unistd.h",
+    //         .child_options = .{
+    //             .args = default_args,
+    //             .target = "aarch64-freestanding-none",
+    //         },
+    //         .processFile = &processPreprocessedFile,
+    //         .header = null,
+    //         .extra_values = null,
+    //         .additional_enum = null,
+    //     },
+    // },
     // generated from table
     .{
         // These architectures have their syscall definitions generated from a TSV
@@ -408,7 +408,7 @@ const arch_infos = [_]ArchInfo{
             },
             .header = null,
             .extra_values = null,
-            .additional_enum = "PowerPC64",
+            .additional_enum = null,
         },
     },
     .{
@@ -425,7 +425,7 @@ const arch_infos = [_]ArchInfo{
             },
             .header = null,
             .extra_values = null,
-            .additional_enum = "PowerPC64",
+            .additional_enum = null,
         },
     },
 };
@@ -654,6 +654,8 @@ pub fn main() !void {
         \\
         \\
     );
+
+    std.debug.print("here\n", .{});
 
     inline for (arch_infos) |arch_info| {
         switch (arch_info) {
