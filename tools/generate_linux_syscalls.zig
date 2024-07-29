@@ -285,7 +285,7 @@ const arch_infos = [_]ArchInfo{
                 .fixedName = &fixedName,
                 .isReservedNameOld = null,
             },
-            .header = "    const arm_base = 0x0f0000;\n",
+            .header = "    const arm_base = 0x0f0000;\n\n",
             // TODO: maybe extract these from arch/arm/include/uapi/asm/unistd.h
             .extra_values =
             \\
@@ -295,6 +295,7 @@ const arch_infos = [_]ArchInfo{
             \\    usr32 = arm_base + 4,
             \\    set_tls = arm_base + 5,
             \\    get_tls = arm_base + 6,
+            \\
             ,
             .additional_enum = null,
         },
@@ -344,7 +345,7 @@ const arch_infos = [_]ArchInfo{
                 .fixedName = &fixedName,
                 .isReservedNameOld = isReservedNameOld,
             },
-            .header = "    const linux_base = 4000;\n",
+            .header = "    const linux_base = 4000;\n\n",
             .extra_values = null,
             .additional_enum = null,
         },
@@ -361,7 +362,7 @@ const arch_infos = [_]ArchInfo{
                 .fixedName = &fixedName,
                 .isReservedNameOld = isReservedNameOld,
             },
-            .header = "    const linux_base = 5000;\n",
+            .header = "    const linux_base = 5000;\n\n",
             .extra_values = null,
             .additional_enum = null,
         },
@@ -378,7 +379,7 @@ const arch_infos = [_]ArchInfo{
                 .fixedName = &fixedName,
                 .isReservedNameOld = isReservedNameOld,
             },
-            .header = "    const linux_base = 6000;\n",
+            .header = "    const linux_base = 6000;\n\n",
             .extra_values = null,
             .additional_enum = null,
         },
@@ -653,8 +654,6 @@ pub fn main() !void {
         \\
         \\
     );
-
-    std.debug.print("here\n", .{});
 
     inline for (arch_infos) |arch_info| {
         switch (arch_info) {
